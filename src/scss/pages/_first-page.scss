@@ -1,0 +1,20 @@
+.first-page {
+    font-family: 'Viaoda Libre', cursive;
+    color: $dark;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+
+    h1 {
+        font-size: 6rem;
+        position: fixed;
+    }
+
+    h2 {
+        font-size: 2.1rem;
+        transform: translateX(230px);
+    }
+}

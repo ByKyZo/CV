@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "dev": "concurrently \"sass --watch src/scss/index.scss src/css_compiled/index.css\" \"parcel src/index.html\" "
+    },
+    "dependencies": {
+        "animejs": "^3.2.1",
+        "concurrently": "^6.2.1",
+        "three": "^0.133.1"
+    }
+}
