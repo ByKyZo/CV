@@ -1910,7 +1910,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var btnTest = document.querySelector('.btn-tester'); // TODO Finir l'anim du texte qui se fait pousser par le svg
 // TODO Finir l'anim du texte qui se fait pousser par le svg
-// TODO Finir l'anim du texte qui se fait pousser par le svg
+// TODO Faire une interface pour pause / start / se deplacer dans l'animation
+// TODO Crée des classes pour faire du code plus propre
+// TODO -> Recuperer les elements / Parametre par defaut des elements / Ajout des animations dans la timeline / Bouton pour debug etc...
 
 (function () {
   var tl = _animejs.default.timeline({
