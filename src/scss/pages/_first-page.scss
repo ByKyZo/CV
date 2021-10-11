@@ -2,11 +2,19 @@
     font-family: 'Viaoda Libre', cursive;
     color: $dark;
     position: fixed;
-    top: 30%;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
-    width: 100%;
     text-align: center;
+    height: auto;
+    width: auto;
+
+    svg {
+        // position: fixed;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+    }
 
     h1 {
         font-size: 6rem;
@@ -15,6 +23,9 @@
 
     h2 {
         font-size: 2.1rem;
-        transform: translateX(230px);
+        // transform: translateX(230px);
+        position: absolute;
+        right: 0px;
+        bottom: 80px;
     }
 }

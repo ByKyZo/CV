@@ -12,17 +12,20 @@ const btnTest = document.querySelector('.btn-tester');
 
 (function () {
     const tl = anime.timeline({
-        // duration: 2000,
+        duration: 500,
         easing: 'easeInOutCubic',
         autoplay: false,
     });
 
     // const titleStroke = document.querySelectorAll('.first-page h1 .__char');
+    const titleSvgElement = document.querySelector('.first-page svg');
     const titleStroke = document.querySelectorAll('.first-page svg > path');
-    const titlefill = document.querySelectorAll('.first-page svg .name-char-fill > path');
+    const titleFill = document.querySelectorAll('.first-page svg .name-char-fill > path');
+    const titleFillClone = [...titleFill].map((el) => el.cloneNode());
+    console.log(titleFillClone);
     const subtitle = document.querySelectorAll('.first-page h2 .__char');
 
-    anime.set(titlefill, {
+    anime.set(titleFillClone, {
         'transform-box': 'fill-box',
     });
 
@@ -46,8 +49,7 @@ const btnTest = document.querySelector('.btn-tester');
     tl.add(
         {
             targets: [titleStroke],
-            duration: 1500,
-            // ...titlesKeyframes,
+            duration: 3000,
             strokeDashoffset: [anime.setDashoffset, 0],
             delay: anime.stagger(150, { from: 'center' }),
         },
@@ -72,8 +74,14 @@ const btnTest = document.querySelector('.btn-tester');
     //? remove opacity on title stroke
     tl.add({
         targets: [titleStroke],
+        duration: 300,
         opacity: 0,
-        delay: anime.stagger(150, { from: 'center' }),
+        complete: () => {
+            titleSvgElement.innerHTML = '';
+            titleFillClone.forEach((el) => titleSvgElement.appendChild(el));
+            console.log('complete svg');
+        },
+        // delay: anime.stagger(150, { from: 'center' }),
     });
 
     //? spawn subtitle
@@ -92,7 +100,7 @@ const btnTest = document.querySelector('.btn-tester');
             d: [
                 {
                     value: 'M0 833.5V0H1440V833.5C1440 833.5 1346.5 898 1127.5 498C908.5 98 569 140.5 353 498C137 855.5 0 833.5 0 833.5Z',
-                    duration: 1000,
+                    duration: 800,
                 },
                 {
                     value: 'M0 0V-62H1440V0C1440 0 1293 -40 1043 12C793 64 660.5 86 411.5 12C162.5 -62 0 0 0 0Z',
@@ -100,7 +108,7 @@ const btnTest = document.querySelector('.btn-tester');
                 },
             ],
         },
-        '+=500'
+        '+=300'
     );
 
     tl.add(
@@ -119,15 +127,14 @@ const btnTest = document.querySelector('.btn-tester');
         rotateY: [0, 90],
     };
 
-    // tl.add(
-    //     {
-    //         targets: [titlefill],
-    //         'transform-box': 'fillbox',
-    //         ...titlesKeyframesReverse,
-    //         delay: anime.stagger(50, { from: 'center' }),
-    //     }
-    //     // '-=1100'
-    // );
+    tl.add(
+        {
+            targets: [titleFillClone],
+            ...titlesKeyframesReverse,
+            delay: anime.stagger(50, { from: 'center' }),
+        },
+        '-=1400'
+    );
 
     tl.add(
         {
@@ -135,7 +142,7 @@ const btnTest = document.querySelector('.btn-tester');
             ...titlesKeyframesReverse,
             delay: anime.stagger(50, { from: 'center' }),
         },
-        '-=1100'
+        '-=1400'
     );
 
     btnTest.addEventListener('click', () => {
