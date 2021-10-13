@@ -146,6 +146,7 @@ const btnTest = document.querySelector('.btn-tester');
     );
 
     btnTest.addEventListener('click', () => {
+        console.log('totzzz');
         tl.restart();
     });
 })();

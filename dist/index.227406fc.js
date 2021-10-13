@@ -140,7 +140,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"1KMPs":[function(require,module,exports) {
+})({"hkXzs":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
@@ -462,7 +462,7 @@ var _preProcessing = require("./pre-processing");
 var _timeline = require("./timeline"); // TODO Recuperer tout les elements a une position precise
  // document.elementFromPoint()
 
-},{"animejs":"o7RAv","./pre-processing":"ffbqW","./timeline":"xi35E","@parcel/transformer-js/src/esmodule-helpers.js":"32RNw"}],"o7RAv":[function(require,module,exports) {
+},{"animejs":"o7RAv","./pre-processing":"ffbqW","./timeline":"xi35E","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"o7RAv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 /*
@@ -1750,7 +1750,7 @@ anime.random = function(min, max) {
 };
 exports.default = anime;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"32RNw"}],"32RNw":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"JacNc":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -1900,57 +1900,66 @@ const btnTest = document.querySelector('.btn-tester');
             from: 'center'
         })
     }, 0);
-    // tl.add(
-    //     {
-    //         targets: '.loader-svg--path',
-    //         d: [
-    //             {
-    //                 value: 'M0 833.5V0H1440V833.5C1440 833.5 1346.5 898 1127.5 498C908.5 98 569 140.5 353 498C137 855.5 0 833.5 0 833.5Z',
-    //                 duration: 800,
-    //             },
-    //             {
-    //                 value: 'M0 0V-62H1440V0C1440 0 1293 -40 1043 12C793 64 660.5 86 411.5 12C162.5 -62 0 0 0 0Z',
-    //                 duration: 500,
-    //             },
-    //         ],
-    //     },
-    //     '+=300'
-    // );
-    // tl.add(
-    //     {
-    //         targets: '.loader-svg',
-    //         translateY: '-10%',
-    //     },
-    //     '-=1000'
-    // );
-    // const titlesKeyframesReverse = {
-    //     duration: 500,
-    //     opacity: [1, 0.5],
-    //     translateY: [0, -100],
-    //     rotateX: [0, 90],
-    //     rotateY: [0, 90],
-    // };
-    // tl.add(
-    //     {
-    //         targets: [titleFillClone],
-    //         ...titlesKeyframesReverse,
-    //         delay: anime.stagger(50, { from: 'center' }),
-    //     },
-    //     '-=1400'
-    // );
-    // tl.add(
-    //     {
-    //         targets: [subtitle],
-    //         ...titlesKeyframesReverse,
-    //         delay: anime.stagger(50, { from: 'center' }),
-    //     },
-    //     '-=1400'
-    // );
+    tl.add({
+        targets: '.loader-svg--path',
+        d: [
+            {
+                value: 'M0 833.5V0H1440V833.5C1440 833.5 1346.5 898 1127.5 498C908.5 98 569 140.5 353 498C137 855.5 0 833.5 0 833.5Z',
+                duration: 800
+            },
+            {
+                value: 'M0 0V-62H1440V0C1440 0 1293 -40 1043 12C793 64 660.5 86 411.5 12C162.5 -62 0 0 0 0Z',
+                duration: 500
+            }, 
+        ]
+    }, '+=300');
+    tl.add({
+        targets: '.loader-svg',
+        translateY: '-10%'
+    }, '-=1000');
+    const titlesKeyframesReverse = {
+        duration: 500,
+        opacity: [
+            1,
+            0.5
+        ],
+        translateY: [
+            0,
+            -100
+        ],
+        rotateX: [
+            0,
+            90
+        ],
+        rotateY: [
+            0,
+            90
+        ]
+    };
+    tl.add({
+        targets: [
+            titleFillClone
+        ],
+        ...titlesKeyframesReverse,
+        delay: _animejsDefault.default.stagger(50, {
+            from: 'center'
+        })
+    }, '-=1400');
+    tl.add({
+        targets: [
+            subtitle
+        ],
+        ...titlesKeyframesReverse,
+        delay: _animejsDefault.default.stagger(50, {
+            from: 'center'
+        })
+    }, '-=1400');
     btnTest.addEventListener('click', ()=>{
+        console.log('totzzz');
         tl.restart();
     });
 })();
 
-},{"animejs":"o7RAv","@parcel/transformer-js/src/esmodule-helpers.js":"32RNw"}]},["1KMPs","23obh"], "23obh", "parcelRequire94c2")
+},{"animejs":"o7RAv","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}]},["hkXzs","23obh"], "23obh", "parcelRequire94c2")
 
 //# sourceMappingURL=index.227406fc.js.map

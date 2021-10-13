@@ -1,0 +1,35 @@
+.loader-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.first-page {
+  font-family: "Viaoda Libre", cursive;
+  color: #262829;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  height: auto;
+  width: auto;
+}
+.first-page h2 {
+  font-size: 2.1rem;
+  position: absolute;
+  right: 0px;
+  bottom: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #262829;
+}
+/*# sourceMappingURL=index.c3685bcf.css.map */
